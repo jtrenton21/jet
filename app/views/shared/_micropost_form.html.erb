@@ -1,0 +1,7 @@
+<%= simple_form_for(@micropost) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.input :content %>
+  </div>
+  <%= f.submit "Post Status", class: "btn btn-large btn-primary" %>
+<% end %>

@@ -1,0 +1,55 @@
+<% if signed_in? %>
+  <div class="row">
+    <aside class="span4">
+      <section>
+        <%= render 'shared/user_info' %>
+      </section>
+      <section>
+        <%= render 'shared/stats' %>
+      </section>
+      
+     <section class ='wpost'>
+        <%= render 'shared/workout_form' %>
+      </section>
+    </aside>
+    <div class="span8">
+      <h3>Fit Feeds</h3>
+      <%= render 'shared/feed' %>
+    </div>
+  </div>
+<% else %>
+  <div class="center hero-unit">
+    <h1>Welcome to Fit By Us</h1>
+
+    <h2>
+      This is the home page for the
+      <a href="http://vunue.com/">Fit By Us</a>
+      
+    </h2>
+
+    <%= link_to "Sign up now!", signup_path,
+                                class: "btn btn-large btn-primary" %>
+  </div>
+<ul class="thumbnails">
+  <li class="span4">
+     <%= link_to image_tag("icon.png", alt: "icon_1"), 'http://vunue.com/' %>
+      <p>Share Your Regiment</p>
+ <%= link_to "Start Sharing", signup_path,
+                                class: "btn btn-large btn-primary" %>
+
+  </li>
+  <li class="span4">
+     <%= link_to image_tag("icon_3a.png", alt: "icon_1"), 'http://vunue.com/' %>
+      <p>Try Other Regiments </p>
+    <%= link_to "Begin Exploring", signup_path,
+                                class: "btn btn-large btn-primary" %>
+  </li>
+<li class="span4">
+     <%= link_to image_tag("icon_2a.png", alt: "icon_1"), 'http://vunue.com/' %>
+      <p>Track Your Progress</p>
+    <%= link_to "Make Gains", signup_path,
+                                class: "btn btn-large btn-primary" %>
+  </li>
+</ul>
+  
+<% end %>

@@ -1,0 +1,12 @@
+<%= simple_form_for(@workout) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+      <%= f.input :name %>
+      <%= f.input :description %>
+      <%= f.input :set, collection: 0..9, prompt: "Select Number of Sets" %>
+      <%= f.input :rep, collection: 0..9, prompt: "Select Number of Reps" %>
+      <%= f.input :duration %>
+      <%= f.input :note %>
+  </div>
+  <%= f.submit "Post Workout", class: "btn btn-large btn-primary" %>
+<% end %>
